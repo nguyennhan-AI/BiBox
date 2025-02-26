@@ -1,0 +1,25 @@
+.HDrButton {
+    font-size: 14px;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.5rem;
+    color: #374151;
+    margin-right: 0.5rem;
+}
+.HDrButton:hover {
+    background-color: rgb(232, 232, 232);
+}
+.HDrButton2 {
+    font-size:14px;
+    align-items: start;
+    
+}
+.headercolor{
+    background-color: rgb(251, 244, 251);
+}
