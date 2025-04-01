@@ -1,0 +1,44 @@
+.groupFile1 {
+    position: relative;
+}
+.groupFile1::after {
+    content: "Add to Favourite";
+    position: absolute;
+    bottom: 30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white; 
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight:500 ;
+    opacity: 0; 
+    transition: opacity 0.2s ease;
+    pointer-events: none; 
+}
+.groupFile1:hover::after {
+    opacity: 1;
+  }
+.groupFile2 {
+    position: relative;
+}
+.groupFile2::after {
+    content: "More";
+    position: absolute;
+    bottom: 30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight:500 ;
+    opacity: 0; 
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+.groupFile2:hover::after {
+    opacity: 1; 
+  }

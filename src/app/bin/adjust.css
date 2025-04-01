@@ -1,0 +1,53 @@
+.restore {
+    position: relative;
+}
+.restore::after {
+    content: "Restore...";
+    position: absolute;
+    bottom: 40px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight:500 ;
+    opacity: 0; 
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.restore:hover::after{
+    opacity: 1;
+}
+.permanent {
+    position: relative;
+}
+.permanent::after {
+    content: "cannot restore after click";
+    position: absolute;
+    bottom: 40px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight:500 ;
+    opacity: 0; 
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.permanent:hover::after{
+    opacity: 1;
+}
+
+.notify{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 300;
+    font-style: italic;
+}

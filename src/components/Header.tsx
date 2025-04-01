@@ -6,8 +6,8 @@ import { CaretDownOutlined } from '@ant-design/icons';
 const Header = () => {
     return (
         <div className="header flex items-center rounded-2xl justify-center py-5 ">
-            <div className="search flex  w-[952px] h-[229px]  rounded-3xl shadow-lg "  >
-                <div className="searchbar flex-col w-[600px] h-full rounded-tl-2xl rounded-bl-2xl " >
+            <div className="search flex  w-[85%] h-[85%]  rounded-3xl shadow-lg "  >
+                <div className="searchbar flex-col w-[64%] h-full rounded-tl-2xl rounded-bl-2xl " >
                     <div className='font-semibold text-[30px] w-full px-5 py-5'>Wanna Find something? </div>
                     <div className='flex items-center bg-white rounded-lg ml-5'>
                         <Search className='text-gray-700'></Search>

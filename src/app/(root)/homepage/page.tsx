@@ -2,6 +2,7 @@
 import PageContent from '@/components/PageContent';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Toaster } from 'sonner';
 
 const page = () => {
     const [isClient, setIsClient] = useState(false); // Kiểm soát trạng thái client-side
@@ -20,6 +21,9 @@ const page = () => {
                 {
                     auth_code : authCode,
                     provider: 1
+                },
+                {
+                    withCredentials : true,
                 }
             )
             .then(res =>{
@@ -35,7 +39,8 @@ const page = () => {
     if (!isClient) return null;
 
     return (
-        <div className="main-content"><PageContent /></div> 
+        <div className="main-content"><PageContent />        <Toaster richColors></Toaster></div> 
+
     );
 };
 

@@ -1,6 +1,5 @@
 import { FolderFilled , MoreOutlined } from '@ant-design/icons';
 import React from 'react';
-import { MoreHorizontal, Menu } from 'lucide-react';
 const HFile2 = () => {
     return (
     <div className="flex flex-col w-[235px] h-[235px] bg-gray-100 rounded-xl shadow-sm hover:bg-gray-200">

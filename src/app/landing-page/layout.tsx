@@ -1,7 +1,42 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import { MoveRight } from 'lucide-react';
 import { FaGithub,FaFacebookF} from "react-icons/fa";
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
 const Layout = () => {
+    const router = useRouter();
+    const [isClient, setIsClient] = useState(false);    
+
+    useEffect(() => {
+        setIsClient(true); // Đánh dấu rằng client đã render
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get("code");
+
+        if (authCode) {
+            console.log("Authorization Code:", authCode);
+
+            // Gửi authCode về backend
+            axios.post('https://storage-app.spsohcmut.xyz/api/v1/auth/confirm',
+                {
+                    code:authCode
+                },
+                {
+                    withCredentials : true,
+                }
+            )
+            .then(res =>{
+                console.log(res)
+            })
+
+            // Xóa 'code' khỏi URL mà không reload trang
+            window.history.replaceState(null, "", window.location.pathname);
+        }
+    }, []);
+
+    // Tránh render component khi đang xử lý authCode để tránh lỗi hydration
+    if (!isClient) return null;
     return (
         <div className="min-h-screen flex-col relative ">
             {/* Background Image */}
@@ -18,9 +53,9 @@ const Layout = () => {
                     <div className="text-[#7DAFAF]">Box</div>
                 </div>
                 <img src="/landingpage-avt-1.jpg" alt="icon" className='w-[300px] h-[150px] '/>
-                <img src="/landingpage-avt.svg" alt="icon" className='w-[70px] h-[7 0px]' />
+                <img src="/landingpage-avt.svg" alt="icon" className='w-[70px] h-[70px]' />
                 <img src="/landingpage-avt-2.jpg" alt="icon" className='w-[300px] h-[150px] '/>
-                <button className="text-white text-xl ">Log In</button>
+                <button className="text-white text-xl " onClick={()=>router.push('/sign-in')}>Log In</button>
             </div>
         
             {/* Content */}
@@ -48,6 +83,7 @@ const Layout = () => {
                 <div className="flex-[7] right relative z-10 ">
                     <img src="/landingpage-bg1.jpg" alt="Background" className="w-full h-full object-cover" />
                 </div>
+                
             </div>
         </div>
     );

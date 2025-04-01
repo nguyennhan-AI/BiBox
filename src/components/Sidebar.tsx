@@ -1,19 +1,21 @@
 'use client';
 import React from 'react';
-import UploadButton from './UploadButton';
+import UploadButton from './Upload/UploadButton';
 import Image from 'next/image';
 import './Adjust.css'
+import { useRouter } from 'next/navigation';
 const Sidebar = () => {
+    const router = useRouter();
     return (
         <div className='sidebar w-full h-full  flex-col'>
             {/* Logo & Notification */}
             <div className='w-full h-[120px] flex items-center justify-between p-2 gap-2 mt-3'>
-                <div className='h-[80px] items-center flex' ><img src="/home-avatar.png" alt="avatar" className='rounded-full h-[100px]'  /></div>
-                <div className=' font1 h-full pt-3 font-semibold text-4xl'>BiBoxStorage</div>
+                <div className='h-[80px] items-center flex' ><img src="/home-avatar.png" alt="avatar" className='rounded-full h-[80px] hover:cursor-pointer' onClick={()=>{router.push('/landing-page')}} /></div>
+                <div className=' font1 h-full pt-3 font-semibold text-4xl '>BiBoxStorage</div>
                 <div className='flex-col justify-end flex h-full'>
                     <div className='flex gap-2 '>
                         <div><img src="/home-bell.svg" alt="bell" className='h-[20px] w-[20px]'/></div>
-                        <img src="heart-icon-1.svg" alt="avt" className='border rounded-xl h-[20px] w-[20px] '/>
+                        <img src="/heart-icon-1.svg" alt="avt" className='border rounded-xl h-[20px] w-[20px] '/>
                     </div>
                 </div>
 
@@ -23,7 +25,7 @@ const Sidebar = () => {
             <nav className='w-full h-[350px] items-center flex justify-center'>
                 <ul className='w-[300px] h-auto flex-col '>
                     <div className="flex w-full h-[90px] items-center gap-3">
-                        <button className="w-[140px] h-full  items-center justify-center flex gap-3 bg-white rounded-2xl hover:shadow-lg hover:bg-gray-100">
+                        <button className="w-[140px] h-full  items-center justify-center flex gap-3 bg-white rounded-2xl hover:shadow-lg hover:bg-gray-100 " onClick={()=>router.push('/homepage')}>
                             <div className='bg-[#7DAFAF] rounded-xl opacity-[70%]  p-2'><img src="/homeicon.svg" alt="homeicon" /></div>
                             <div>Home</div>
                         </button>
@@ -43,7 +45,7 @@ const Sidebar = () => {
                         </button>
                     </div>
                     <div className="flex w-full h-[90px] items-center gap-3 mt-4">
-                        <button className="w-[140px] h-full  items-center justify-center flex gap-3 bg-white rounded-2xl hover:shadow-lg hover:bg-gray-100">
+                        <button className="w-[140px] h-full  items-center justify-center flex gap-3 bg-white rounded-2xl hover:shadow-lg hover:bg-gray-100" onClick={() => router.push("/bin")}>
                             <div className='bg-[#7DAFAF] rounded-xl opacity-[70%] p-2'><img src="/binicon.svg" alt="homeicon" className='w-[24px] h-[24px]'/></div>
                             <div>Bin</div>
                         </button>

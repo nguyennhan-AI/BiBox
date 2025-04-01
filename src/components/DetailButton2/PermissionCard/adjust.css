@@ -1,0 +1,16 @@
+.permissionbackground {
+    background-image: url('/permission/permissioncard.svg');
+    opacity: 1;
+    background-color: white;
+}
+.custom-input::placeholder{
+    color: #ACA1A1;
+}
+.textfont1{
+    font-family: 'Inknut Antiqua';
+    font-size: 14;
+}
+.textfont2{
+    font-family: 'Inria Sans';
+    font-size: 14;
+}
