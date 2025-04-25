@@ -5,7 +5,9 @@ import { ArrowDown } from 'lucide-react';
 import axios from 'axios';
 import useBin from '@/components/zustand/useBin';
 import { DeletedFileComponent } from './deletedFile';
+import Image from 'next/image';
 
+// Interfaces remain the same
 interface PermissionInFile {
     user_id: string;
     permission_type: number;
@@ -38,6 +40,7 @@ const Page = () => {
     const router = useRouter();
     const { binAct } = useBin();
     const [deleteFile, setDeleteFile] = useState<File[]>([]);
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -51,9 +54,10 @@ const Page = () => {
                 },
             });
             setDeleteFile(res.data.data.data);
+            setLoading(false);
         };
         fetchData();
-    }, [binAct]);
+    }, [binAct, loading]);
 
     return (
         <div className='bg-gray-50'>
@@ -98,29 +102,34 @@ const Page = () => {
                         </div>
 
                         {/* Conditional Rendering */}
-                        {deleteFile.length > 0 ? (
-                            <>
-                                <div className='h-[20px] w-[100%] flex justify-between px-5 font-semibold'>
-                                    <div className='flex gap-2'>
-                                        <div>Name</div>
-                                        <ArrowDown />
-                                    </div>
-                                    <div className='mr-5'>Deleted at</div>
-                                </div>
-                                <div className='w-full h-full px-8 flex flex-col gap-1'>
-                                    <div className='w-full h-[1px] bg-gray-200'></div>
-                                    {deleteFile.map((file, index) => (
-                                        <div key={index}>
-                                            <DeletedFileComponent file={file} />
-                                        </div>
-                                    ))}
-                                </div>
-                            </>
+                        {loading ? (
+                            <div>Loading...</div>
                         ) : (
-                            <div className='w-full h-full px-[100px] flex flex-col gap-2 items-center '>
-                                <img src="/bin-image/bin-avt.png" alt=""  className='bg-none h-[370px] w-[330px] mr-4'/>
-                                <div className='notify text-[#239c9c]'>Oops...seems like there is nothing in your bin</div>
-                            </div>
+                            deleteFile.length > 0 ? (
+                                <>
+                                    <div className='h-[20px] w-[100%] flex justify-between px-5 font-semibold'>
+                                        <div className='flex gap-2'>
+                                            <div>Name</div>
+                                            <ArrowDown />
+                                        </div>
+                                        <div className='mr-5'>Deleted at</div>
+                                    </div>
+                                    <div className='w-full h-full px-8 flex flex-col gap-1'>
+                                        <div className='w-full h-[1px] bg-gray-200'></div>
+                                        {deleteFile.map((file, index) => (
+                                            <div key={index}>
+                                                <DeletedFileComponent file={file} />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : (
+                                <div className='w-full h-full px-[100px] flex flex-col gap-2 items-center'>
+                                    {/* <img src="/bin-image/bin-avt.png" alt="" className='bg-none h-[370px] w-[330px] mr-4'/> */}
+                                    <Image src='/bin-image/bin-avt.png' height={370} width={330} alt='' className='bg-none mr-4'></Image>
+                                    <div className='notify text-[#239c9c]'>Oops...seems like there is nothing in your bin</div>
+                                </div>
+                            )
                         )}
                     </div>
                 </div>

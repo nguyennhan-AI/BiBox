@@ -7,8 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
-import { AlertSignUp } from "@/components/AlertSignUp";
+import { AlertSignUp } from "@/components/AlerSignUp/AlertSignUp";
 import axios from 'axios';
+import Image from "next/image";
 
 
 const SignUp = () => {
@@ -43,8 +44,8 @@ const SignUp = () => {
       <section className="col-span-6 h-full overflow-hidden">
         <div className="h-[100px]">
           <div className="h-[50px] mt-5 ml-5 flex items-center space-x-2">
-            <div className="p-2 border border-teal-600 border-[2px]">
-              <img src="/icon.png" alt="icon" className="h-[24px] w-[24px]" />
+            <div className="p-2 border-teal-600 border-[2px]">
+            <Image src="/icon.png" height={24} width={24} alt="pic"></Image>
             </div>
             <button className="text-gray-600 text-lg font-medium" onClick={()=>{router.push('/landing-page')}}>BiBox</button>
           </div>

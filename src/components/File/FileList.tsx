@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ListOfFile from './ListOfFile';
 import useStore from '../zustand/zustandstore';
+import Image from 'next/image';
 
 interface PermissionInFile {
     user_id : string,
@@ -56,10 +57,11 @@ const FileList = () => {
         };
         fetchFiles();
     }, [act]);
+
     return (
         <div className='w-full h-full flex-col gap-5 flex'>
             <div className="font1 w-full h-[32px] flex items-center text-center text-3xl">
-            <img src="/file-icon.svg" alt="homeicon" className='h-[35px] w-[35px]' />
+            <Image src="/file-icon.svg" height={35} width={35} alt='homeicon'></Image>
             Files
             </div>
             {fileList.length > 0 && 

@@ -5,6 +5,7 @@ import DetailButton from '../DetailButton/DetButton';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import "./Adjust.css";
+import Image from 'next/image';
 
 interface FileCardProps{
     fileId:string,
@@ -34,7 +35,7 @@ const FileCard:React.FC<FileCardProps> = ({fileId,filename,filetype,file_size,/*
     return (
         <div className='w-[350px] h-[170px] border-[3px] border-[#7DAFAF] rounded-2xl shadow-md flex justify-center cursor-pointer gap-2 bg-white hover:shadow-xl transition-all select-none' onDoubleClick={handlePreview}>
             {/* preview */}
-            <div className="flex justify-center items-center h-full w-[130px]"><img src="/homepic.svg" alt="preview" className='justify-center h-[120px] w-[120px]' /></div>
+            <div className="flex justify-center items-center h-full w-[130px]"><Image src='/homepic.svg' height={120} width={120} alt='preview'></Image></div>
             <div className='flex flex-col justify-between '>
                 <div className='flex-col h-[130px]'>
                     <div className='h-[30px] flex justify-end mt-1 mr-2'>
@@ -54,7 +55,7 @@ const FileCard:React.FC<FileCardProps> = ({fileId,filename,filetype,file_size,/*
                     </div>
                     <div className='flex gap-[2px]'>
                         <div className='w-[25px] h-[25px] flex items-center justify-center bg-[#7DAFAF] rounded-lg hover:bg-[#5D8F8F] groupFile1'>
-                            <img src="/heart-icon-1.svg" alt="hearticon" className='h-[18px] h-[18px] '/>
+                            <Image src="heart-icon-1.svg" height={18} width={18} alt='hearticon'></Image>
                         </div>
                         <div className='groupFile2'><DetailButton fileID = {fileId}/></div>
                     </div>

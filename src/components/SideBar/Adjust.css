@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+.headercolor1{
+    background-color: #101922;
+}
+.star{
+width: 144px;
+height: 30px;
+
+font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.SortButton {
+    font-size: 14px;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    background-color: black;
+}
+.SortButton:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0px 6px 5px rgba(160, 160, 160, 0.3); 
+}
+
+.SortButton:active {
+    transform: translateY(1px); 
+    box-shadow: 0px 6px 5px rgba(160, 160, 160, 0.3); 
+}
+
+
+.font1 {
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans'; 
+}
+
+.dashboard{
+    background-color: #FA7275;
+}
+
+.brandcolor{
+    color: rgb(63, 169, 214);
+    font-family: 'Courier New';
+}
+.search{
+    position: relative;
+    background-image: url('/home-searchbg.svg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+.payment{
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.7;
+}

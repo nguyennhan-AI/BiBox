@@ -1,6 +1,6 @@
 "use client";
-import Header from '@/components/Header';
-import Sidebar from '@/components/Sidebar';
+import Header from '@/components/Header/Header';
+import Sidebar from '@/components/SideBar/Sidebar';
 import './PageAdjust.css';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

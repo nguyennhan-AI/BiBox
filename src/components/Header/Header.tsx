@@ -11,7 +11,7 @@ const Header = () => {
                     <div className='font-semibold text-[30px] w-full px-5 py-5'>Wanna Find something? </div>
                     <div className='flex items-center bg-white rounded-lg ml-5'>
                         <Search className='text-gray-700'></Search>
-                        <Input className='bg-transparent outline-none border-none px-3 text-gray-700 focus:outline-none focus:ring-0' type='text' placeholder='Search in BiStorage'></Input>
+                        <Input className='bg-transparent outline-none border-none px-3 text-gray-700 focus:outline-none focus:ring-0' type='text' placeholder='Search in BiBox'></Input>
                     </div>
                     <div className='w-full items-center px-5 py-5 flex gap-3'>
                         <button className=" w-[152px] h-[48px]  ">

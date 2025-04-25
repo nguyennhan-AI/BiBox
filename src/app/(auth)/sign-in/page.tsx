@@ -4,6 +4,7 @@ import { FaGoogle, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import "./Adjust-auth.css";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Image from "next/image";
 const SignIn = () => {
   const router = useRouter();
   const handleNavigate = () => {
@@ -36,10 +37,11 @@ const SignIn = () => {
       <section className="col-span-6 h-full overflow-hidden ">
         <div className="h-[100px]">
           <div className="h-[50px] mt-5 ml-5 flex items-center space-x-2 ">
-            <div className="p-2 border border-teal-600 border-[2px]">
+            <div className="p-2 border-teal-600 border-[2px]">
               <button  onClick={() => {
                 router.push("/landing-page");
-              }}><img src="/icon.png" alt="icon" className="h-[24px] w-[24px]" /></button>
+              }}><Image src="/icon.png" height={24} width={24} alt="pic"></Image></button>
+
             </div>
             <div
               className="text-gray-600 text-lg font-medium"

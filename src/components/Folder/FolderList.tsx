@@ -3,6 +3,7 @@ import AddFolderButton from './AddFolderButton';
 import axios from 'axios';
 import ListOfFolder from './ListOfFolder';
 import useStore from '../zustand/zustandstore';
+import Image from 'next/image';
 
 interface PermissionInFile {
     user_id : string,
@@ -52,10 +53,12 @@ const FolderList = () => {
 };
     handle();
     },[act])
+
+
     return (
         <div className='w-full h-full flex-col gap-5 flex'>
             <div className="font1 w-full h-[32px] flex items-center text-center text-3xl gap-1">
-                <img src="/home-folder-icon.svg" alt="homeicon" className='w-[35px] h-[35px]' />
+                <Image src="/home-folder-icon.svg" height={35} width={35} alt='homeicon'></Image>
                 Folders
                 <AddFolderButton setFolderFunction = {setFolderList}  />
             </div>

@@ -1,15 +1,14 @@
 'use client'
-import PermissionCard from "@/components/DetailButton2/PermissionCard/PermissionCard";
-
-
-
-
+import React from 'react';
 const Test = () => {
-    return (
-        <div>
-          <PermissionCard folderId="67d81cfb21ac0927c37d37da"/>
+    const client = 0;
+    if (client) return (
+      <div>client</div>
+    );
+    else return (
+      <div>
 
-        </div>
+      </div>
     );
 }
 

@@ -34,14 +34,12 @@ interface File {
 export const DeletedFileComponent = ({file}:{file:File}) => {
     const {setBinAct} = useBin();
     const handleRestore = async() =>{
-        const res = await axios.patch(`https://storage-app.spsohcmut.xyz/api/v1/files/${file.id}/recover`);
-        console.log(res);
+        await axios.patch(`https://storage-app.spsohcmut.xyz/api/v1/files/${file.id}/recover`);
         setBinAct();
     }
 
     const handlePermanentDeleted = async() =>{
-        const res = await axios.delete(`https://storage-app.spsohcmut.xyz/api/v1/files/${file.id}/hard-delete`);
-        console.log(res);
+        axios.delete(`https://storage-app.spsohcmut.xyz/api/v1/files/${file.id}/hard-delete`);
         setBinAct();
     }
 

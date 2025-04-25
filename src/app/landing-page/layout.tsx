@@ -4,6 +4,7 @@ import { MoveRight } from 'lucide-react';
 import { FaGithub,FaFacebookF} from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import Link from 'next/link';
 const Layout = () => {
     const router = useRouter();
     const [isClient, setIsClient] = useState(false);    
@@ -71,8 +72,16 @@ const Layout = () => {
                             </div>
                             <div className='text-white text-1xl flex-col'>
                                 <div>CONTACT WITH US : </div>
-                                <div className='flex gap-1 items-center'><FaFacebookF className='bg-gray-700 rounded-lg'/> https://www.facebook.com/bao.thai.5268</div>
-                                <div className='flex gap-1 items-center'><FaGithub className='bg-gray-700 rounded-lg'/> baothaihcmut</div>
+                                <div className='flex gap-1 items-center'>
+                                    <FaFacebookF className='bg-gray-700 rounded-lg'></FaFacebookF>
+                                    <Link className='flex gap-1 items-center hover:underline' href='https://www.facebook.com/bao.thai.5268'> https://www.facebook.com/bao.thai.5268</Link>
+                                </div>
+                                <div className='flex items-center gap-1'>
+                                    <FaGithub className='bg-gray-700 rounded-lg'/>
+                                    <Link className='flex gap-1 items-center hover:underline' href='https://github.com/baothaihcmut'> baothaihcmut</Link>
+                                    <div>/</div>
+                                    <Link className='flex gap-1 items-center hover:underline' href='https://github.com/nguyennhan-AI'> nguyennhan-AI</Link>
+                                </div>
                                 <div className='flex'>READ MORE <MoveRight/></div>
                             </div>
                         </div>
